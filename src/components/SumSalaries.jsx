@@ -9,7 +9,7 @@ const SumSalaries = ({ data, currency }) => {
         <td>
           {data
             .map((i) => i.salary)
-            .reduce((a, b) => a + b)
+            .reduce((a, b) => Number(a) + Number(b))
             .toString()}{" "}
           {currency}
         </td>
