@@ -18,7 +18,6 @@ const WorkerForm = ({ create, workerId }) => {
     create(newWorker);
     setWorker(emptyWorkerForm);
   };
-  console.log(worker);
 
   return (
     <form>
