@@ -6,9 +6,15 @@
 body {
   font-family: "lato", sans-serif;
 }
-
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .container {
-  max-width: 1000px;
+  margin-top: 5vh;
+  margin-bottom: 25px;
+  width: 100vw;
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
@@ -41,6 +47,7 @@ table {
 }
 .tbl-content {
   height: 500px;
+  margin: 0 10%;
   overflow-x: auto;
   position: static;
   left: 0;

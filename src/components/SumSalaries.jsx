@@ -1,4 +1,5 @@
 import React from "react";
+import NotFound from "./UI/NotFound/NotFound";
 
 const SumSalaries = ({ data, currency }) => {
   if (data.length) {
@@ -18,7 +19,7 @@ const SumSalaries = ({ data, currency }) => {
       </tfoot>
     );
   }
-  return <h1>No results found</h1>;
+  return null;
 };
 
 export default SumSalaries;

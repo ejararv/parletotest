@@ -10,11 +10,17 @@
 
 .modal.active {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .modal_context {
+ 
+  display: flex;
+  margin: 20px;
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
   padding: 25px;
   background-color: aliceblue;
   border-radius: 16px;

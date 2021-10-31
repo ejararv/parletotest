@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import MyButton from "./UI/MyButton/MyButton";
+import MyInput from "./UI/MyInput/MyInput";
+import MySelect from "./UI/MySelect/MySelect";
 const emptyWorkerForm = {
   firstName: "",
   lastName: "",
@@ -8,6 +11,7 @@ const emptyWorkerForm = {
 };
 const WorkerForm = ({ create, workerId }) => {
   const [worker, setWorker] = useState(emptyWorkerForm);
+  const [selectedValue, setSelectedValue] = useState("");
 
   const addWorker = (e) => {
     e.preventDefault();
@@ -19,30 +23,44 @@ const WorkerForm = ({ create, workerId }) => {
     setWorker(emptyWorkerForm);
   };
 
+  const getSelectedValue = (select) => {
+    setSelectedValue(select);
+    setWorker({ ...worker, department: select });
+  };
+
   return (
-    <form>
-      <input
+    <form className="form">
+      <MySelect
+        style={{ width: 230, padding: "5px 15px", margin: "20px" }}
+        value={worker.department}
+        type="text"
+        defaultValue="Department"
+        onChange={getSelectedValue}
+        options={[
+          { value: "IT", name: "IT" },
+          { value: "Sales", name: "Sales" },
+          { value: "Administration", name: "Administraton" },
+        ]}
+      />
+      <MyInput
+        style={{ width: 230 }}
         value={worker.firstName}
         onChange={(e) => setWorker({ ...worker, firstName: e.target.value })}
         type="text"
-        required
+        required="required"
         placeholder="First name"
       />
-      <input
+      <MyInput
+        style={{ width: 230 }}
         value={worker.lastName}
         onChange={(e) => setWorker({ ...worker, lastName: e.target.value })}
         type="text"
         required
         placeholder="Last name"
       />
-      <input
-        value={worker.department}
-        onChange={(e) => setWorker({ ...worker, department: e.target.value })}
-        type="text"
-        required
-        placeholder="Department"
-      />
-      <input
+
+      <MyInput
+        style={{ width: 230 }}
         value={worker.salary}
         onChange={(e) => setWorker({ ...worker, salary: e.target.value })}
         type="number"
@@ -50,7 +68,9 @@ const WorkerForm = ({ create, workerId }) => {
         placeholder="Salary"
       />
 
-      <button onClick={addWorker}>Add Worker</button>
+      <MyButton style={{ width: 230 }} onClick={addWorker}>
+        Add Worker
+      </MyButton>
     </form>
   );
 };

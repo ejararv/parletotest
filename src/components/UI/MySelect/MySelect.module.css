@@ -1,0 +1,17 @@
+.select {
+    
+  outline: none !important;
+  height: 40px;
+  background: #ffffff2f;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.select:hover {
+  background: #25c4827c;
+}
+
+.option {
+  background: #25b7c4;
+  border: 2px solid #fff;
+}

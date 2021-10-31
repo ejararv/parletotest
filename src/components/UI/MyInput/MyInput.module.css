@@ -21,8 +21,17 @@
   padding: 24px 16px 8px 16px;
 }
 .input {
-  width: 70%;
+  width: 50%;
+  height: 40px;
   padding: 5px 15px;
-  margin: 5px 0;
-  border: 1px solid gray;
+  margin: 20px;
+  border: 2px solid #fff;
+  background: #ffffff36;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 2px solid #fff;
+  background: #ffffff50;
+  box-shadow: 0 0 10px #719ece;
 }
