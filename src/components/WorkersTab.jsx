@@ -6,6 +6,15 @@ const WorkersTab = ({ data, sum }) => {
   return (
     <div className="tbl-content">
       <table cellPadding="0" cellSpacing="0" border="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Department</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
         {data.map((i, index) => {
           return (
             <Worker
@@ -18,7 +27,6 @@ const WorkersTab = ({ data, sum }) => {
             />
           );
         })}
-
         {sum}
       </table>
     </div>

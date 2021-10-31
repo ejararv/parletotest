@@ -25,24 +25,28 @@ const WorkerForm = ({ create, workerId }) => {
         value={worker.firstName}
         onChange={(e) => setWorker({ ...worker, firstName: e.target.value })}
         type="text"
+        required
         placeholder="First name"
       />
       <input
         value={worker.lastName}
         onChange={(e) => setWorker({ ...worker, lastName: e.target.value })}
         type="text"
+        required
         placeholder="Last name"
       />
       <input
         value={worker.department}
         onChange={(e) => setWorker({ ...worker, department: e.target.value })}
         type="text"
+        required
         placeholder="Department"
       />
       <input
         value={worker.salary}
         onChange={(e) => setWorker({ ...worker, salary: e.target.value })}
         type="number"
+        required
         placeholder="Salary"
       />
 
