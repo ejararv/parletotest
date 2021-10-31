@@ -11,7 +11,6 @@ const emptyWorkerForm = {
 };
 const WorkerForm = ({ create, workerId }) => {
   const [worker, setWorker] = useState(emptyWorkerForm);
-  const [selectedValue, setSelectedValue] = useState("");
 
   const addWorker = (e) => {
     e.preventDefault();
@@ -24,7 +23,6 @@ const WorkerForm = ({ create, workerId }) => {
   };
 
   const getSelectedValue = (select) => {
-    setSelectedValue(select);
     setWorker({ ...worker, department: select });
   };
 

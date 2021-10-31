@@ -1,5 +1,4 @@
 import React from "react";
-import NotFound from "./UI/NotFound/NotFound";
 
 const SumSalaries = ({ data, currency }) => {
   if (data.length) {
