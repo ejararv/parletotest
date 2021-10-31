@@ -6,7 +6,7 @@ const emptyWorkerForm = {
   firstName: "",
   lastName: "",
   department: "",
-  salary: 0,
+  salary: 2500,
   currency: "USD",
 };
 const WorkerForm = ({ create, workerId }) => {
@@ -22,7 +22,7 @@ const WorkerForm = ({ create, workerId }) => {
     setWorker(emptyWorkerForm);
   };
 
-  const getSelectedValue = (select) => {
+  const getSelectedValue = (select = "IT") => {
     setWorker({ ...worker, department: select });
   };
 
@@ -38,6 +38,7 @@ const WorkerForm = ({ create, workerId }) => {
           { value: "IT", name: "IT" },
           { value: "Sales", name: "Sales" },
           { value: "Administration", name: "Administraton" },
+          {},
         ]}
       />
       <MyInput
@@ -45,6 +46,7 @@ const WorkerForm = ({ create, workerId }) => {
         value={worker.firstName}
         onChange={(e) => setWorker({ ...worker, firstName: e.target.value })}
         type="text"
+        name="firstName"
         required="required"
         placeholder="First name"
       />
@@ -53,6 +55,7 @@ const WorkerForm = ({ create, workerId }) => {
         value={worker.lastName}
         onChange={(e) => setWorker({ ...worker, lastName: e.target.value })}
         type="text"
+        name="lastName"
         required
         placeholder="Last name"
       />
@@ -60,8 +63,9 @@ const WorkerForm = ({ create, workerId }) => {
       <MyInput
         style={{ width: 230 }}
         value={worker.salary}
-        onChange={(e) => setWorker({ ...worker, salary: e.target.value })}
+        onChange={(e) => setWorker({ ...worker, salary: +e.target.value })}
         type="number"
+        min="100"
         required
         placeholder="Salary"
       />
