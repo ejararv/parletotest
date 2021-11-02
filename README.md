@@ -1,4 +1,4 @@
-DEMO: [https://silly-clarke-399922.netlify.app/]
+# DEMO: https://silly-clarke-399922.netlify.app/
 
 ![Demonstration](screen-recording.gif)
 
